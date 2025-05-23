@@ -62,11 +62,6 @@ blockquote p {
 	.red {
   color: red;
 }
-	
-#header #headercontent p:last-child {
-  text-align: center;
-  margin-top: 1em;
-}
 
 /* Main editor container */
 #editor {
