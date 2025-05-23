@@ -65,39 +65,47 @@ blockquote p {
 /* Main editor container */
 #editor {
   display: flex;
-  flex-direction: row-reverse; /* reverses the order so input (textbox) is on the right */
-  direction: rtl;              /* makes text direction right-to-left */
+  flex-direction: row-reverse; /* input on right, output on left */
+  direction: rtl;               /* overall container RTL */
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
+  height: 70vh;                 /* fixed height */
+  box-sizing: border-box;
 }
 
 #textbox, #output {
   width: 50%;
   box-sizing: border-box;
+  height: 100%;
+  direction: rtl;               /* make both containers RTL */
+  text-align: right;            /* align text to right inside */
 }
 
-/* Textarea style */
 #textbox textarea {
   width: 100%;
-  height: 70vh;
+  height: 100%;
   resize: none;
   box-sizing: border-box;
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid #000;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: auto;
+  direction: rtl;               /* textarea content RTL */
+  text-align: right;            /* align text right */
 }
 
-/* Output style */
 #output {
-  min-height: 73.55vh;
+  height: 100%;
   padding: 1rem;
   background: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
-  direction: ltr; /* you might want output to stay LTR if it contains code or markdown */
+  overflow-y: auto;
+  /* Also force content to be RTL */
+  direction: rtl;
+  text-align: right;
 }
 
 /* Code blocks */
