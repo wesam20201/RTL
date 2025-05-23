@@ -1,6 +1,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans|Fira+Mono);
 
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 /* ===== Reset and Base Layout ===== */
 * {
 	margin: 0;
@@ -10,10 +17,11 @@
 }
 
 html, body {
+	margin: 0;
+	padding: 0;
 	height: 100%;
 	background-color: #fff;
 	overflow-x: hidden;
-	position: relative;
 }
 
 /* Remove top gap globally */
@@ -34,19 +42,25 @@ h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
 
 /* ===== GitHub Ribbon Fix ===== */
 .github-corner {
-	position: fixed;
+	position: fixed !important;
 	top: 0;
 	right: 0;
 	z-index: 1000;
-	pointer-events: none; /* Don't block layout */
+	pointer-events: none;
+	width: 80px;
+	height: 80px;
+}
+
+.github-corner svg {
+	display: block;
 }
 
 /* ===== Header Section ===== */
 #header {
-	text-align: center;
+	margin: 0;
+	padding: 0;
 	position: relative;
-	padding-top: 0.5em;
-	margin-top: 0;
+	text-align: center;
 }
 
 #header .red {
