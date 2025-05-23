@@ -1,143 +1,59 @@
 @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans|Fira+Mono);
 
-body {
-	background-color: #fff;
-	margin: 0;
-	padding: 0;
-	height: 100vh;
-	
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', 'Droid Arabic Naskh', serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
-	font-family: 'Open Sans', 'Droid Arabic Naskh', serif;
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	text-decoration: none;
-}
-
-* {
-	font-family: 'Open Sans', 'Droid Arabic Naskh', serif;
-	box-sizing: border-box;
-}
-
-li {
-	padding-right: 1em;
-}
-
-li li {
-	padding-right: 2em;
-}
-
-li li li {
-	padding-right: 4em;
-}
-
-blockquote p {
-	border-right: 5px solid #d6d3d3;
-	padding-right: 8px;
-}
-
-/* Header */
-#header {
-	/* empty or your styles */
-}
-
-#header #sitename {
-	text-align: center;
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-
-#header #sitedescription {
-	text-align: center;
-	font-size: 1em;
-	margin-top: 0;
-	padding-top: 0;
-	margin-bottom: 2em;
-	.red {
+.red {
   color: red;
 }
 
-/* Main editor container */
+#header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 #editor {
   display: flex;
   flex-direction: row-reverse; /* input on right, output on left */
-  direction: rtl;               /* overall container RTL */
-  align-items: flex-start;
+  align-items: flex-start;     /* align tops */
   gap: 1rem;
   padding: 1rem;
-  height: 70vh;                 /* fixed height */
-  box-sizing: border-box;
+  direction: rtl;              /* container RTL */
 }
 
 #textbox, #output {
   width: 50%;
   box-sizing: border-box;
-  height: 100%;
-  direction: rtl;               /* make both containers RTL */
-  text-align: right;            /* align text to right inside */
+  /* Make sure each container is RTL aligned */
+  direction: rtl;
+  text-align: right;
 }
 
 #textbox textarea {
   width: 100%;
-  height: 100%;
+  height: 70vh;
   resize: none;
   box-sizing: border-box;
   padding: 1rem;
   font-size: 1rem;
   border: 1px solid #000;
   border-radius: 6px;
-  overflow: auto;
-  direction: rtl;               /* textarea content RTL */
-  text-align: right;            /* align text right */
+  overflow: hidden;
+  direction: rtl;              /* textarea content RTL */
+  text-align: right;
 }
 
 #output {
-  height: 100%;
+  min-height: 70vh;            /* same height as textarea */
   padding: 1rem;
   background: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow-y: auto;
-  /* Also force content to be RTL */
   direction: rtl;
   text-align: right;
-}
-
-/* Code blocks */
-code {
-	display: inline-block;
-	direction: rtl;
-	font-family: 'Fira Mono', monospace;
-	padding: 0.5em;
-	font-size: 0.9em;
-	color: #913D88;
-	background-color: beige;
-}
-
-pre code {
-	display: block;
-	direction: rtl;
-	font-family: 'Fira Mono', monospace;
-	margin-left: 2em;
-	font-size: 0.9em;
-	color: #913D88;
-	background-color: beige;
-}
-
-/* Footer */
-#footer {
-	/* empty or your styles */
-}
-
-#footer #footercontent {
-	text-align: right;
-	margin-top: 2em;
-	margin-right: 2em;
-	font-size: 0.9em;
-	font-family: 'Fira Mono', monospace;
 }
