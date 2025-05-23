@@ -16,20 +16,29 @@ html, body {
   margin-bottom: 1em;
 }
 
+/* Editor container with flexbox, normal row direction */
 #editor {
   display: flex;
-  flex-direction: row-reverse; /* input on right, output on left */
-  align-items: flex-start;     /* align tops */
+  align-items: flex-start; /* align top edges */
   gap: 1rem;
   padding: 1rem;
-  direction: rtl;              /* container RTL */
+  direction: ltr; /* keep container ltr to control element order naturally */
 }
 
-#textbox, #output {
+/* Use order to place #textbox on right, #output on left */
+#textbox {
+  order: 2;   /* show second (on the right) */
   width: 50%;
   box-sizing: border-box;
-  /* Make sure each container is RTL aligned */
-  direction: rtl;
+  direction: rtl; /* text inside input container RTL */
+  text-align: right;
+}
+
+#output {
+  order: 1;   /* show first (on the left) */
+  width: 50%;
+  box-sizing: border-box;
+  direction: rtl; /* text inside output container RTL */
   text-align: right;
 }
 
@@ -43,17 +52,15 @@ html, body {
   border: 1px solid #000;
   border-radius: 6px;
   overflow: hidden;
-  direction: rtl;              /* textarea content RTL */
+  direction: rtl;  /* input text flows right to left */
   text-align: right;
 }
 
 #output {
-  min-height: 70vh;            /* same height as textarea */
+  min-height: 70vh;
   padding: 1rem;
   background: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow-y: auto;
-  direction: rtl;
-  text-align: right;
 }
