@@ -73,25 +73,25 @@ h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
 
 #editor-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row;  /* side by side */
   gap: 20px;
   width: 100%;
   height: 80vh;
   box-sizing: border-box;
-  align-items: stretch;  /* ensures children have equal height */
+  align-items: stretch; /* make children equal height */
 }
 
-/* Textarea and Output */
 #textbox, #output {
-  flex: 1 1 50%;
+  flex: 1 1 50%;        /* each takes half width, flexible */
   box-sizing: border-box;
-  display: flex;              /* make these flex containers */
+  display: flex;        /* make children flex containers */
   flex-direction: column;
-  height: 100%;               /* fill parent's height */
+  height: 100%;         /* fill height of #editor-container */
+  min-height: 0;        /* important for flex children shrink */
 }
 
 #textbox textarea {
-  flex-grow: 1;               /* fills available vertical space */
+  flex-grow: 1;         /* fill vertical space */
   width: 100%;
   padding: 1em;
   resize: none;
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
   line-height: 1.5em;
   overflow-y: auto;
   box-sizing: border-box;
-  min-height: 0;              /* important to allow shrinking in flex */
+  min-height: 0;
 }
 
 #output {
@@ -111,9 +111,9 @@ h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
   padding: 1em;
   overflow-y: auto;
   border-radius: 4px;
-  flex-grow: 1;               /* fill parent's height */
+  flex-grow: 1;         /* fill vertical space */
   box-sizing: border-box;
-  min-height: 0;              /* important for flex overflow */
+  min-height: 0;
 }
 
 /* Lists */
