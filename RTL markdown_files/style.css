@@ -65,7 +65,8 @@ blockquote p {
 /* Main editor container */
 #editor {
   display: flex;
-  align-items: flex-start;     /* ensures both children align to the top */
+  flex-direction: row-reverse;  /* input right, output left */
+  align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
 }
@@ -76,8 +77,9 @@ blockquote p {
 }
 
 #textbox textarea {
+  direction: rtl;               /* ensure textarea text is RTL */
   width: 100%;
-  height: 70vh;                /* initial height */
+  height: 70vh;
   resize: none;
   box-sizing: border-box;
   padding: 1rem;
@@ -88,7 +90,8 @@ blockquote p {
 }
 
 #output {
-  min-height: 73.55vh;            /* same as textarea for alignment */
+  direction: rtl;               /* make output text RTL if needed */
+  min-height: 73.55vh;
   padding: 1rem;
   background: #f9f9f9;
   border: 1px solid #ccc;
