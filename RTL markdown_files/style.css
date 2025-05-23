@@ -65,14 +65,22 @@ blockquote p {
 /* Main editor container */
 #editor {
   display: flex;
-  align-items: flex-start;     /* ensures both children align to the top */
+  flex-direction: row-reverse; /* reverses the order so input (textbox) is on the right */
+  direction: rtl;              /* makes text direction right-to-left */
+  align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
 }
 
+#textbox, #output {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Textarea style */
 #textbox textarea {
   width: 100%;
-  height: 70vh;                /* initial height */
+  height: 70vh;
   resize: none;
   box-sizing: border-box;
   padding: 1rem;
@@ -82,17 +90,14 @@ blockquote p {
   overflow: hidden;
 }
 
-#textbox, #output {
-  width: 50%;
-  box-sizing: border-box;
-}
-
+/* Output style */
 #output {
-  min-height: 73.55vh;            /* same as textarea for alignment */
+  min-height: 73.55vh;
   padding: 1rem;
   background: #f9f9f9;
   border: 1px solid #ccc;
   border-radius: 6px;
+  direction: ltr; /* you might want output to stay LTR if it contains code or markdown */
 }
 
 /* Code blocks */
