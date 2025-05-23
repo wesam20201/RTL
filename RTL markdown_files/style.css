@@ -98,7 +98,7 @@ blockquote p {
 /* Code blocks */
 code {
 	display: inline-block;
-	direction: ltr;
+	direction: rtl;
 	font-family: 'Fira Mono', monospace;
 	padding: 0.5em;
 	font-size: 0.9em;
@@ -108,7 +108,7 @@ code {
 
 pre code {
 	display: block;
-	direction: ltr;
+	direction: rtl;
 	font-family: 'Fira Mono', monospace;
 	margin-left: 2em;
 	font-size: 0.9em;
