@@ -40,22 +40,6 @@ h1, h2, h3, h4, h5, h6, p, div, strong, em, ul, ol, li {
 	font-family: 'Open Sans', 'Droid Arabic Naskh', serif;
 }
 
-/* ===== GitHub Ribbon Fix ===== */
-.github-corner {
-	position: fixed !important;
-	top: 0;
-	left: 0; /* Keep it on the left */
-	z-index: 1000;
-	width: 80px;
-	height: 80px;
-	pointer-events: auto;
-}
-
-.github-corner svg {
-	display: block;
-	transform: scale(-1, 1); /* flip to top-left corner */
-}
-
 /* ===== Header Section ===== */
 #header {
 	margin: 0;
